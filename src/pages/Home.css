@@ -1,0 +1,1503 @@
+/* =========================================================
+   GARDEN & GRILL
+   PIZZA & SUSHI
+   DIGITAL MENU — HOME
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --garden-green: #234936;
+  --garden-green-dark: #142d22;
+  --garden-green-deep: #0c1d16;
+  --garden-green-soft: #3f654e;
+
+  --garden-red: #b9472f;
+  --garden-red-dark: #8e3022;
+  --garden-red-light: #d96b4e;
+
+  --garden-gold: #c89b55;
+  --garden-gold-light: #dfbd7c;
+
+  --garden-black: #101412;
+  --garden-charcoal: #181d1a;
+
+  --garden-cream: #f5f0e7;
+  --garden-cream-dark: #e9e0d2;
+  --garden-white: #ffffff;
+
+  --garden-text: #202824;
+  --garden-muted: #707872;
+  --garden-border: #ddd6ca;
+
+  --shadow-soft: 0 15px 45px rgba(20, 35, 27, 0.08);
+  --shadow-medium: 0 20px 55px rgba(12, 29, 22, 0.14);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--garden-cream);
+  color: var(--garden-text);
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+/* =========================================================
+   HOME
+   ========================================================= */
+
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--garden-cream);
+  color: var(--garden-text);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.home-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+
+  min-height: 94px;
+  padding: 0 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(8, 22, 16, 0.82),
+      rgba(8, 22, 16, 0.25),
+      transparent
+    );
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.home-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+
+  color: var(--garden-white);
+  text-decoration: none;
+  line-height: 1;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.home-brand:hover {
+  opacity: 0.96;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.home-brand img {
+  display: block;
+
+  width: 68px;
+  height: 68px;
+
+  object-fit: contain;
+  flex-shrink: 0;
+
+  filter: drop-shadow(
+    0 5px 15px rgba(0, 0, 0, 0.38)
+  );
+
+  transition: transform 0.25s ease;
+}
+
+.home-brand:hover img {
+  transform: scale(1.04);
+}
+
+/* =========================================================
+   BRAND TEXT
+   ========================================================= */
+
+.home-brand span {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.94);
+}
+
+/* =========================================================
+   WHATSAPP HEADER
+   ========================================================= */
+
+.home-header-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+  padding: 0 21px;
+
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.09);
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+
+  backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.home-header-whatsapp:hover {
+  transform: translateY(-2px);
+
+  background: var(--garden-red);
+  border-color: var(--garden-red);
+
+  box-shadow:
+    0 12px 30px rgba(185, 71, 47, 0.32);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.home-hero {
+  position: relative;
+
+  min-height: 790px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 22, 16, 0.94) 0%,
+      rgba(8, 22, 16, 0.80) 30%,
+      rgba(8, 22, 16, 0.50) 62%,
+      rgba(8, 22, 16, 0.20) 100%
+    ),
+    url("/garden-grill-hero.jpg");
+
+  background-size: cover;
+  background-position: center center;
+}
+
+/* =========================================================
+   HERO DECORATION
+   ========================================================= */
+
+.home-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: -230px;
+  bottom: -250px;
+
+  border: 1px solid rgba(200, 155, 85, 0.30);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.home-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 330px;
+  height: 330px;
+
+  right: -145px;
+  bottom: -165px;
+
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   HERO OVERLAY
+   ========================================================= */
+
+.home-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 76% 43%,
+      rgba(200, 155, 85, 0.15),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(185, 71, 47, 0.16),
+      transparent 32%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.home-hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(
+    690px,
+    calc(100% - 40px)
+  );
+
+  margin-left: 8%;
+  padding-top: 65px;
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   HERO LABEL
+   ========================================================= */
+
+.home-hero-label {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 27px;
+  padding-left: 44px;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.32em;
+}
+
+.home-hero-label::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+
+  width: 31px;
+  height: 1px;
+
+  background: var(--garden-gold);
+}
+
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
+
+.home-hero-content h1 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      3.5rem,
+      7vw,
+      5.8rem
+    );
+
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+}
+
+.home-hero-content h1 span {
+  color: var(--garden-gold-light);
+  font-style: italic;
+}
+
+/* =========================================================
+   HERO DESCRIPTION
+   ========================================================= */
+
+.home-hero-content > p {
+  max-width: 525px;
+
+  margin:
+    30px 0 37px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 0.97rem;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.home-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.home-button {
+  min-height: 54px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  padding: 0 28px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* =========================================================
+   BUTTON — MENU
+   ========================================================= */
+
+.home-button-primary {
+  background: var(--garden-red);
+  color: #ffffff;
+
+  box-shadow:
+    0 13px 32px rgba(185, 71, 47, 0.32);
+}
+
+.home-button-primary:hover {
+  background: var(--garden-red-light);
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 40px rgba(185, 71, 47, 0.42);
+}
+
+.home-button-primary span {
+  font-size: 1.1rem;
+}
+
+/* =========================================================
+   BUTTON — VISITE-NOS
+   ========================================================= */
+
+.home-button-secondary {
+  border:
+    1px solid rgba(255, 255, 255, 0.32);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+
+  backdrop-filter: blur(10px);
+}
+
+.home-button-secondary:hover {
+  background:
+    rgba(255, 255, 255, 0.15);
+
+  border-color:
+    rgba(255, 255, 255, 0.52);
+
+  transform: translateY(-3px);
+}
+
+.home-button-secondary span {
+  color: var(--garden-gold-light);
+  font-size: 1rem;
+}
+
+/* =========================================================
+   HERO SCROLL
+   ========================================================= */
+
+.home-hero-scroll {
+  position: absolute;
+  z-index: 3;
+
+  left: 8%;
+  bottom: 35px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color:
+    rgba(255, 255, 255, 0.53);
+
+  font-size: 0.53rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+.home-scroll-line {
+  width: 48px;
+  height: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.32);
+}
+
+/* =========================================================
+   VISITE-NOS
+   ========================================================= */
+
+.home-visit {
+  width:
+    min(
+      1140px,
+      calc(100% - 48px)
+    );
+
+  margin: 0 auto;
+
+  padding:
+    112px 0 118px;
+}
+
+/* =========================================================
+   VISIT HEADER
+   ========================================================= */
+
+.home-visit-header {
+  text-align: center;
+  margin-bottom: 58px;
+}
+
+.home-visit-header > span {
+  display: block;
+
+  margin-bottom: 13px;
+
+  color: var(--garden-red);
+
+  font-size: 0.61rem;
+  font-weight: 900;
+  letter-spacing: 0.28em;
+}
+
+.home-visit-header h2 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  color: var(--garden-green-dark);
+
+  font-size:
+    clamp(
+      2.5rem,
+      5vw,
+      3.7rem
+    );
+
+  font-weight: 400;
+  line-height: 1;
+}
+
+.home-visit-header h2 span {
+  color: var(--garden-red);
+}
+
+.home-visit-header p {
+  max-width: 520px;
+
+  margin:
+    18px auto 0;
+
+  color: var(--garden-muted);
+
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   VISIT CARDS
+   ========================================================= */
+
+.home-visit-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 17px;
+}
+
+.home-visit-card {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 17px;
+
+  padding: 27px;
+
+  border:
+    1px solid var(--garden-border);
+
+  border-radius: 18px;
+
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  box-shadow:
+    0 4px 20px rgba(20, 35, 27, 0.025);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.home-visit-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(185, 71, 47, 0.38);
+
+  box-shadow:
+    var(--shadow-soft);
+}
+
+/* =========================================================
+   VISIT ICON
+   ========================================================= */
+
+.home-visit-icon {
+  width: 50px;
+  height: 50px;
+
+  flex: 0 0 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background:
+    #e7eee8;
+
+  color:
+    var(--garden-green);
+
+  font-size: 1.15rem;
+}
+
+/* =========================================================
+   VISIT TEXT
+   ========================================================= */
+
+.home-visit-card > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.home-visit-card > div:last-child > span {
+  color: #8a908c;
+
+  font-size: 0.54rem;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
+
+.home-visit-card h3 {
+  margin: 0;
+
+  color: var(--garden-green-dark);
+
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.home-visit-card p {
+  margin: 0;
+
+  color: #7b817e;
+
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   VISIT ACTION
+   ========================================================= */
+
+.home-visit-action {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 38px;
+}
+
+.home-visit-action a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  min-height: 49px;
+  padding: 0 25px;
+
+  border-radius: 999px;
+
+  background:
+    var(--garden-green-dark);
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 0.74rem;
+  font-weight: 800;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.home-visit-action a:hover {
+  background:
+    var(--garden-red);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 11px 27px rgba(185, 71, 47, 0.25);
+}
+
+.home-visit-action a span {
+  color:
+    var(--garden-gold-light);
+
+  font-size: 1rem;
+}
+
+.home-visit-action a:hover span {
+  color: #ffffff;
+}
+
+/* =========================================================
+   WEEKLY MENU
+   ========================================================= */
+
+.home-weekly {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    100px 5%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--garden-green-dark),
+      var(--garden-green-deep)
+    );
+
+  color: #ffffff;
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+.home-weekly::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  left: -210px;
+  top: -210px;
+
+  border:
+    1px solid rgba(200, 155, 85, 0.20);
+
+  border-radius: 50%;
+}
+
+.home-weekly::after {
+  content: "";
+
+  position: absolute;
+
+  width: 310px;
+  height: 310px;
+
+  right: -155px;
+  bottom: -155px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 50%;
+}
+
+/* =========================================================
+   WEEKLY HEADER
+   ========================================================= */
+
+.home-weekly-header {
+  position: relative;
+  z-index: 2;
+
+  max-width: 650px;
+
+  margin: 0 auto;
+}
+
+.home-weekly-header > span {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color:
+    var(--garden-gold-light);
+
+  font-size: 0.60rem;
+  font-weight: 900;
+  letter-spacing: 0.27em;
+}
+
+.home-weekly-header h2 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      2.6rem,
+      5vw,
+      4rem
+    );
+
+  font-weight: 400;
+  line-height: 1;
+}
+
+.home-weekly-header h2 span {
+  color:
+    var(--garden-gold-light);
+}
+
+.home-weekly-header p {
+  max-width: 520px;
+
+  margin:
+    20px auto 0;
+
+  color:
+    rgba(255, 255, 255, 0.67);
+
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   WEEKLY MENU BUTTON
+   ========================================================= */
+
+.home-weekly-action {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+
+  margin-top: 34px;
+}
+
+.home-weekly-action a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  min-height: 51px;
+  padding: 0 26px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.22);
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 0.74rem;
+  font-weight: 800;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.home-weekly-action a:hover {
+  transform: translateY(-3px);
+
+  background:
+    var(--garden-red);
+
+  border-color:
+    var(--garden-red);
+}
+
+.home-weekly-action a span {
+  color:
+    var(--garden-gold-light);
+}
+
+.home-weekly-action a:hover span {
+  color: #ffffff;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.home-footer {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr auto 1fr;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding:
+    43px 5%;
+
+  background:
+    #09120e;
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   FOOTER BRAND
+   ========================================================= */
+
+.home-footer-brand {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.home-footer-brand strong {
+  color: #ffffff;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+}
+
+.home-footer-brand span {
+  color:
+    rgba(255, 255, 255, 0.52);
+
+  font-size: 0.69rem;
+}
+
+/* =========================================================
+   FOOTER LINKS
+   ========================================================= */
+
+.home-footer-links {
+  display: flex;
+  align-items: center;
+
+  gap: 27px;
+}
+
+.home-footer-links a {
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  text-decoration: none;
+
+  font-size: 0.71rem;
+  font-weight: 700;
+
+  transition:
+    color 0.2s ease;
+}
+
+.home-footer-links a:hover {
+  color:
+    var(--garden-gold-light);
+}
+
+/* =========================================================
+   COPYRIGHT
+   ========================================================= */
+
+.home-footer-copy {
+  justify-self: end;
+
+  color:
+    rgba(255, 255, 255, 0.38);
+
+  font-size: 0.64rem;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .home-header {
+    padding: 0 4%;
+  }
+
+  .home-brand {
+    gap: 10px;
+  }
+
+  .home-hero {
+    background-position: 68% center;
+  }
+
+  .home-hero-content {
+    margin-left: 6%;
+  }
+
+  .home-visit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-visit-card {
+    padding: 21px;
+  }
+
+  .home-footer {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .home-footer-copy {
+    justify-self: start;
+
+    grid-column:
+      1 / -1;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .home-header {
+    min-height: 72px;
+
+    padding:
+      0 20px;
+  }
+
+  .home-brand {
+    gap: 8px;
+  }
+
+  .home-brand img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .home-brand span {
+    font-size: 0.72rem;
+  }
+
+  .home-header-whatsapp {
+    min-height: 38px;
+
+    padding:
+      0 13px;
+
+    font-size: 0.64rem;
+  }
+
+  /* =======================================================
+     HERO — MOBILE
+     ======================================================= */
+
+  .home-hero {
+    min-height: 700px;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(8, 22, 16, 0.95) 0%,
+        rgba(8, 22, 16, 0.72) 38%,
+        rgba(8, 22, 16, 0.42) 72%,
+        rgba(8, 22, 16, 0.22) 100%
+      ),
+      url("/garden-grill-hero.jpg");
+
+    /*
+      A imagem desloca-se para a direita em telas menores.
+      Assim conseguimos mostrar melhor a parte direita
+      da fotografia original.
+    */
+    background-position: 75% center;
+    background-size: cover;
+  }
+
+  .home-hero-content {
+    width:
+      calc(100% - 40px);
+
+    margin:
+      0 20px;
+
+    padding-top:
+      72px;
+  }
+
+  /* =======================================================
+     LABEL
+     ======================================================= */
+
+  .home-hero-label {
+    margin-bottom: 20px;
+
+    padding-left: 30px;
+
+    font-size: 0.55rem;
+    letter-spacing: 0.20em;
+  }
+
+  .home-hero-label::before {
+    width: 22px;
+  }
+
+  /* =======================================================
+     TITLE
+     ======================================================= */
+
+  .home-hero-content h1 {
+    font-size:
+      clamp(
+        3rem,
+        14vw,
+        4.35rem
+      );
+
+    letter-spacing:
+      -0.045em;
+  }
+
+  /* =======================================================
+     DESCRIPTION
+     ======================================================= */
+
+  .home-hero-content > p {
+    max-width: 390px;
+
+    margin:
+      22px 0 29px;
+
+    font-size: 0.84rem;
+    line-height: 1.7;
+  }
+
+  /* =======================================================
+     BUTTONS
+     ======================================================= */
+
+  .home-hero-actions {
+    width: 100%;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 10px;
+  }
+
+  .home-button {
+    width: 100%;
+
+    min-height: 52px;
+
+    font-size: 0.75rem;
+  }
+
+  /* =======================================================
+     SCROLL
+     ======================================================= */
+
+  .home-hero-scroll {
+    left: 20px;
+    bottom: 25px;
+  }
+
+  /* =======================================================
+     VISIT
+     ======================================================= */
+
+  .home-visit {
+    width:
+      calc(100% - 32px);
+
+    padding:
+      72px 0;
+  }
+
+  .home-visit-header {
+    margin-bottom: 36px;
+  }
+
+  .home-visit-header > span {
+    font-size: 0.54rem;
+
+    letter-spacing:
+      0.20em;
+  }
+
+  .home-visit-header h2 {
+    font-size:
+      2.55rem;
+  }
+
+  .home-visit-header p {
+    max-width: 350px;
+
+    font-size: 0.81rem;
+  }
+
+  /* =======================================================
+     CARDS
+     ======================================================= */
+
+  .home-visit-grid {
+    gap: 10px;
+  }
+
+  .home-visit-card {
+    padding: 17px;
+
+    gap: 13px;
+
+    border-radius: 15px;
+  }
+
+  .home-visit-icon {
+    width: 43px;
+    height: 43px;
+
+    flex-basis: 43px;
+
+    border-radius: 12px;
+  }
+
+  .home-visit-card > div:last-child > span {
+    font-size: 0.50rem;
+  }
+
+  .home-visit-card h3 {
+    font-size: 0.83rem;
+  }
+
+  .home-visit-card p {
+    font-size: 0.67rem;
+  }
+
+  /* =======================================================
+     VISIT BUTTON
+     ======================================================= */
+
+  .home-visit-action {
+    margin-top: 25px;
+  }
+
+  .home-visit-action a {
+    width: 100%;
+
+    min-height: 49px;
+  }
+
+  /* =======================================================
+     WEEKLY
+     ======================================================= */
+
+  .home-weekly {
+    padding:
+      72px 20px;
+  }
+
+  .home-weekly-header h2 {
+    font-size:
+      2.55rem;
+  }
+
+  .home-weekly-header p {
+    font-size:
+      0.80rem;
+  }
+
+  .home-weekly-action a {
+    width: 100%;
+  }
+
+  /* =======================================================
+     FOOTER
+     ======================================================= */
+
+  .home-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding:
+      31px 20px;
+  }
+
+  .home-footer-links {
+    width: 100%;
+
+    gap: 21px;
+  }
+
+  .home-footer-copy {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .home-header {
+    padding:
+      0 15px;
+  }
+
+  .home-brand {
+    gap: 7px;
+  }
+
+  .home-brand img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .home-brand span {
+    font-size: 0.68rem;
+  }
+
+  .home-header-whatsapp {
+    padding:
+      0 10px;
+
+    font-size: 0.59rem;
+  }
+
+  /* =======================================================
+     HERO — SMALL MOBILE
+     ======================================================= */
+
+  .home-hero {
+    min-height: 660px;
+
+    /*
+      Em telas muito pequenas deslocamos ainda mais
+      a imagem para a direita.
+    */
+    background-position: 80% center;
+  }
+
+  .home-hero-content {
+    width:
+      calc(100% - 30px);
+
+    margin:
+      0 15px;
+
+    padding-top:
+      60px;
+  }
+
+  .home-hero-content h1 {
+    font-size:
+      2.85rem;
+  }
+
+  .home-hero-content > p {
+    font-size:
+      0.79rem;
+  }
+
+  /* =======================================================
+     BUTTONS
+     ======================================================= */
+
+  .home-button {
+    min-height: 49px;
+
+    padding:
+      0 18px;
+  }
+
+  /* =======================================================
+     VISIT
+     ======================================================= */
+
+  .home-visit {
+    width:
+      calc(100% - 24px);
+
+    padding:
+      56px 0;
+  }
+
+  .home-visit-header h2 {
+    font-size:
+      2.2rem;
+  }
+
+  /* =======================================================
+     CARDS
+     ======================================================= */
+
+  .home-visit-card {
+    padding:
+      14px;
+  }
+
+  .home-visit-icon {
+    width: 39px;
+    height: 39px;
+
+    flex-basis: 39px;
+
+    font-size: 0.9rem;
+  }
+
+  /* =======================================================
+     WEEKLY
+     ======================================================= */
+
+  .home-weekly {
+    padding:
+      60px 15px;
+  }
+
+  .home-weekly-header h2 {
+    font-size:
+      2.2rem;
+  }
+
+  /* =======================================================
+     FOOTER
+     ======================================================= */
+
+  .home-footer {
+    padding:
+      28px 15px;
+  }
+}

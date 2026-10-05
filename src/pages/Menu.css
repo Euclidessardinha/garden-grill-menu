@@ -1,0 +1,2014 @@
+/* =========================================================
+   GARDEN & GRILL PIZZA & SUSHI — MENU DIGITAL
+
+   IDENTIDADE: VERMELHO + PRETO + BRANCO + VERDE JARDIM
+   ========================================================= */
+
+:root {
+  /* Identidade do logotipo */
+  --garden-red: #b52f25;
+  --garden-red-dark: #8e211a;
+  --garden-red-light: #d95b4f;
+
+  --garden-black: #111111;
+  --garden-dark: #181818;
+  --garden-charcoal: #252525;
+
+  --garden-white: #ffffff;
+
+  /* Identidade jardim */
+  --garden-green-deep: #173f2a;
+  --garden-green: #2f6b45;
+  --garden-green-light: #4f8a5b;
+  --garden-green-soft: #e7f0e7;
+  --garden-green-pale: #f1f6f0;
+
+  /* Tons naturais */
+  --garden-cream: #f7f4ef;
+  --garden-cream-dark: #ebe6dd;
+  --garden-sand: #dcd1bd;
+  --garden-wood: #5a4633;
+
+  /* Premium */
+  --garden-gold: #c49a52;
+  --garden-gold-light: #dfbd7c;
+
+  /* Texto */
+  --garden-text: #1d2921;
+  --garden-muted: #707970;
+  --garden-border: #dce2da;
+
+  /* Sombras */
+  --garden-shadow:
+    0 12px 35px rgba(23, 63, 42, 0.09);
+
+  --garden-shadow-hover:
+    0 20px 45px rgba(23, 63, 42, 0.15);
+
+  --garden-radius: 18px;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+.menu-page {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f8f6f1 0%,
+      var(--garden-cream) 100%
+    );
+
+  color: var(--garden-text);
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+.menu-page *,
+.menu-page *::before,
+.menu-page *::after {
+  box-sizing: border-box;
+}
+
+.menu-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu-page button,
+.menu-page input {
+  font: inherit;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.menu-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  min-height: 78px;
+
+  padding: 9px 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f0f0f 0%,
+      #151515 70%,
+      #101c15 100%
+    );
+
+  border-bottom:
+    1px solid rgba(181, 47, 37, 0.55);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.18);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* =========================================================
+   HEADER — DECORATIVE LINE
+   ========================================================= */
+
+.menu-header::after {
+  content: "";
+
+  position: absolute;
+  left: 5%;
+  bottom: -1px;
+
+  width: 90px;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--garden-red) 0%,
+      var(--garden-red) 55%,
+      var(--garden-green) 55%,
+      var(--garden-green) 100%
+    );
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.menu-brand {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  min-width: 0;
+}
+
+.menu-brand img {
+  width: 57px;
+  height: 57px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+
+  filter:
+    drop-shadow(
+      0 3px 8px rgba(0, 0, 0, 0.35)
+    );
+}
+
+.menu-brand-text {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.menu-brand-text strong {
+  color: var(--garden-white);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  line-height: 1;
+}
+
+.menu-brand-text span {
+  position: relative;
+
+  color: var(--garden-green-light);
+
+  font-size: 0.62rem;
+  font-weight: 600;
+
+  letter-spacing: 0.24em;
+
+  text-transform: uppercase;
+}
+
+.menu-brand-text span::before {
+  content: "";
+
+  display: inline-block;
+
+  width: 18px;
+  height: 1px;
+
+  margin-right: 7px;
+
+  vertical-align: middle;
+
+  background: var(--garden-red);
+}
+
+/* =========================================================
+   HEADER ACTIONS
+   ========================================================= */
+
+.menu-header-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+/* =========================================================
+   CART
+   ========================================================= */
+
+.menu-cart-link {
+  position: relative;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  color: var(--garden-white);
+
+  font-size: 1.05rem;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.menu-cart-link:hover {
+  transform: translateY(-2px);
+
+  background:
+    var(--garden-red);
+
+  border-color:
+    var(--garden-red);
+
+  color: white;
+}
+
+.menu-cart-count {
+  position: absolute;
+
+  top: -5px;
+  right: -5px;
+
+  min-width: 20px;
+  height: 20px;
+
+  padding: 0 5px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    2px solid var(--garden-dark);
+
+  border-radius: 50%;
+
+  background:
+    var(--garden-red);
+
+  color: white;
+
+  font-size: 0.62rem;
+  font-weight: 800;
+}
+
+/* =========================================================
+   WHATSAPP HEADER
+   ========================================================= */
+
+.menu-whatsapp-button {
+  min-height: 44px;
+
+  padding: 0 17px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border:
+    1px solid rgba(181, 47, 37, 0.75);
+
+  border-radius: 999px;
+
+  background:
+    var(--garden-red);
+
+  color: #ffffff;
+
+  font-size: 0.73rem;
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+
+  box-shadow:
+    0 5px 15px rgba(181, 47, 37, 0.22);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.menu-whatsapp-button:hover {
+  transform: translateY(-2px);
+
+  background:
+    var(--garden-red-light);
+
+  box-shadow:
+    0 8px 20px rgba(181, 47, 37, 0.32);
+
+  color: white;
+}
+
+/* =========================================================
+   CART NOTICE
+   ========================================================= */
+
+.menu-cart-notice {
+  position: fixed;
+
+  right: 24px;
+  top: 98px;
+
+  z-index: 150;
+
+  width:
+    min(420px, calc(100vw - 32px));
+
+  padding: 15px 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  background:
+    var(--garden-white);
+
+  border:
+    1px solid var(--garden-border);
+
+  border-left:
+    4px solid var(--garden-green);
+
+  border-radius: 16px;
+
+  box-shadow:
+    var(--garden-shadow);
+}
+
+.menu-cart-notice span {
+  color:
+    var(--garden-text);
+
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.menu-cart-notice a {
+  padding: 9px 12px;
+
+  display: inline-flex;
+  align-items: center;
+
+  border-radius: 9px;
+
+  background:
+    var(--garden-black);
+
+  color: white;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.menu-cart-notice a:hover {
+  background:
+    var(--garden-green);
+}
+
+/* =========================================================
+   HERO / INTRO
+   ========================================================= */
+
+.menu-intro {
+  position: relative;
+
+  min-height: 390px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      115deg,
+      #0b0d0c 0%,
+      #12261b 48%,
+      #173f2a 100%
+    );
+
+  color: white;
+}
+
+.menu-intro::before,
+.menu-intro::after {
+  content: "";
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.menu-intro::before {
+  width: 460px;
+  height: 460px;
+
+  right: -170px;
+  top: -190px;
+
+  border:
+    1px solid rgba(79, 138, 91, 0.35);
+
+  box-shadow:
+    inset 0 0 0 35px rgba(79, 138, 91, 0.025);
+}
+
+.menu-intro::after {
+  width: 310px;
+  height: 310px;
+
+  right: -70px;
+  bottom: -185px;
+
+  border:
+    1px solid rgba(181, 47, 37, 0.40);
+}
+
+.menu-intro > div:first-child::before {
+  content: "";
+
+  position: absolute;
+
+  width: 85px;
+  height: 42px;
+
+  right: 24%;
+  top: 65px;
+
+  border:
+    1px solid rgba(79, 138, 91, 0.22);
+
+  border-radius:
+    100% 0 100% 0;
+
+  transform:
+    rotate(-25deg);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   INTRO LABEL
+   ========================================================= */
+
+.menu-intro-label {
+  position: relative;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 17px;
+
+  color:
+    var(--garden-gold-light);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.25em;
+}
+
+.menu-intro-label::before {
+  content: "";
+
+  width: 30px;
+  height: 1px;
+
+  background:
+    var(--garden-red);
+}
+
+/* =========================================================
+   INTRO TITLE
+   ========================================================= */
+
+.menu-intro h1 {
+  position: relative;
+  z-index: 2;
+
+  max-width: 720px;
+
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(3rem, 7vw, 6rem);
+
+  line-height: 0.95;
+
+  font-weight: 400;
+
+  letter-spacing: -0.04em;
+}
+
+.menu-intro h1 span {
+  color:
+    var(--garden-red-light);
+
+  font-style: italic;
+}
+
+/* =========================================================
+   INTRO DESCRIPTION
+   ========================================================= */
+
+.menu-intro p {
+  position: relative;
+  z-index: 2;
+
+  max-width: 500px;
+
+  margin: 24px 0 0;
+
+  color:
+    rgba(255, 255, 255, 0.76);
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   INTRO BADGE
+   ========================================================= */
+
+.menu-intro-badge {
+  position: absolute;
+  z-index: 3;
+
+  right: 7%;
+  bottom: 45px;
+
+  width: 155px;
+  height: 155px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.20);
+
+  border-radius: 50%;
+
+  background:
+    rgba(47, 107, 69, 0.15);
+
+  color:
+    rgba(255, 255, 255, 0.9);
+
+  text-align: center;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 0.78rem;
+
+  line-height: 1.4;
+
+  backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.menu-content {
+  width: min(1180px, 90%);
+
+  margin: 0 auto;
+
+  padding: 65px 0 80px;
+}
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.menu-search-section {
+  width: min(680px, 100%);
+
+  margin: 0 auto 65px;
+}
+
+.menu-search-box {
+  position: relative;
+
+  width: 100%;
+}
+
+.menu-search-box input {
+  width: 100%;
+  height: 58px;
+
+  padding:
+    0 48px 0 52px;
+
+  border:
+    1px solid var(--garden-border);
+
+  border-radius: 14px;
+
+  outline: none;
+
+  background: white;
+
+  color: var(--garden-text);
+
+  box-shadow:
+    0 7px 25px rgba(23, 63, 42, 0.06);
+
+  font-size: 0.9rem;
+
+  transition:
+    border 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.menu-search-box input::placeholder {
+  color: #9a9f9d;
+}
+
+.menu-search-box input:focus {
+  border-color:
+    var(--garden-green);
+
+  box-shadow:
+    0 8px 30px rgba(47, 107, 69, 0.13);
+}
+
+.menu-search-box > span {
+  position: absolute;
+
+  left: 20px;
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  color:
+    var(--garden-green);
+
+  font-size: 1.35rem;
+
+  pointer-events: none;
+}
+
+.menu-search-box button {
+  position: absolute;
+
+  right: 13px;
+  top: 50%;
+
+  width: 32px;
+  height: 32px;
+
+  transform:
+    translateY(-50%);
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background:
+    rgba(23, 63, 42, 0.07);
+
+  color:
+    var(--garden-black);
+
+  cursor: pointer;
+
+  font-size: 1.15rem;
+}
+
+/* =========================================================
+   CATEGORY SECTION
+   ========================================================= */
+
+.menu-categories {
+  margin-bottom: 80px;
+}
+
+.menu-section-heading {
+  margin-bottom: 28px;
+}
+
+.menu-section-heading > span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color:
+    var(--garden-green);
+
+  font-size: 0.68rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.2em;
+}
+
+.menu-section-heading h2 {
+  margin: 0;
+
+  color:
+    var(--garden-black);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(1.8rem, 3vw, 2.5rem);
+
+  font-weight: 400;
+
+  letter-spacing: -0.025em;
+}
+
+.menu-section-heading p {
+  margin: 8px 0 0;
+
+  color:
+    var(--garden-muted);
+
+  font-size: 0.82rem;
+}
+
+/* =========================================================
+   CATEGORY LIST
+   ========================================================= */
+
+.menu-category-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 12px;
+}
+
+.menu-category-button {
+  min-height: 94px;
+
+  padding: 16px 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  border:
+    1px solid var(--garden-border);
+
+  border-radius: 15px;
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  color:
+    var(--garden-text);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.22s ease,
+    border 0.22s ease,
+    background 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.menu-category-button:hover {
+  transform:
+    translateY(-3px);
+
+  border-color:
+    rgba(47, 107, 69, 0.30);
+
+  background:
+    white;
+
+  box-shadow:
+    var(--garden-shadow);
+}
+
+.menu-category-button.active {
+  border-color:
+    var(--garden-green);
+
+  background:
+    var(--garden-green);
+
+  color:
+    white;
+
+  box-shadow:
+    0 12px 28px rgba(47, 107, 69, 0.20);
+}
+
+.menu-category-icon {
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background:
+    rgba(47, 107, 69, 0.09);
+
+  color:
+    var(--garden-green-deep);
+
+  font-size: 1.3rem;
+}
+
+.menu-category-button.active .menu-category-icon {
+  background:
+    rgba(255, 255, 255, 0.14);
+
+  color:
+    white;
+}
+
+/* =========================================================
+   RESULTS
+   ========================================================= */
+
+.menu-results {
+  margin-top: 10px;
+}
+
+.menu-results-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 28px;
+
+  padding-bottom: 17px;
+
+  border-bottom:
+    1px solid var(--garden-border);
+}
+
+.menu-results-heading > div > span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color:
+    var(--garden-green);
+
+  font-size: 0.68rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.2em;
+}
+
+.menu-results-heading h2 {
+  margin: 0;
+
+  color:
+    var(--garden-black);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(1.8rem, 3vw, 2.5rem);
+
+  font-weight: 400;
+}
+
+.menu-results-heading small {
+  color:
+    var(--garden-muted);
+
+  font-size: 0.78rem;
+}
+
+/* =========================================================
+   DAYS
+   ========================================================= */
+
+.menu-day-section {
+  margin-bottom: 48px;
+}
+
+.menu-day-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.menu-day-heading::after {
+  content: "";
+
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    var(--garden-border);
+}
+
+.menu-day-heading span {
+  color:
+    var(--garden-green);
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   DISH GRID
+   ========================================================= */
+
+.menu-dishes-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+/* =========================================================
+   DISH CARD
+   ========================================================= */
+
+.menu-dish-card {
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  border:
+    1px solid var(--garden-border);
+
+  border-radius:
+    var(--garden-radius);
+
+  background:
+    white;
+
+  box-shadow:
+    0 5px 20px rgba(23, 63, 42, 0.045);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.menu-dish-card:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(47, 107, 69, 0.20);
+
+  box-shadow:
+    var(--garden-shadow-hover);
+}
+
+/* =========================================================
+   DISH IMAGE
+   ========================================================= */
+
+.menu-dish-image {
+  position: relative;
+
+  height: 250px;
+
+  overflow: hidden;
+
+  background:
+    #e8e4dc;
+}
+
+/*
+  LINK DA IMAGEM
+
+  A imagem inteira agora é clicável
+  e leva para /menu/:id
+*/
+
+.menu-dish-image-link {
+  position: absolute;
+
+  inset: 0;
+
+  display: block;
+
+  z-index: 1;
+
+  cursor: pointer;
+}
+
+.menu-dish-image-link img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.menu-dish-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(17, 17, 17, 0.02) 40%,
+      rgba(17, 17, 17, 0.42) 100%
+    );
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+.menu-dish-card:hover
+.menu-dish-image-link img {
+  transform:
+    scale(1.045);
+}
+
+/* =========================================================
+   CATEGORY LABEL
+   ========================================================= */
+
+.menu-dish-category {
+  position: absolute;
+
+  top: 13px;
+  left: 13px;
+
+  z-index: 4;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(17, 17, 17, 0.78);
+
+  color:
+    white;
+
+  font-size: 0.62rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+
+  backdrop-filter: blur(5px);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   DAY LABEL
+   ========================================================= */
+
+.menu-dish-day {
+  display: inline-block;
+
+  margin-bottom: 7px;
+
+  color:
+    var(--garden-green);
+
+  font-size: 0.62rem;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+}
+
+/* =========================================================
+   ADD BUTTON
+   ========================================================= */
+
+.menu-dish-add {
+  position: absolute;
+
+  right: 13px;
+  bottom: 13px;
+
+  z-index: 5;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    2px solid white;
+
+  border-radius: 50%;
+
+  background:
+    var(--garden-red);
+
+  color:
+    white;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.20);
+
+  cursor: pointer;
+
+  font-size: 1.5rem;
+
+  line-height: 1;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.menu-dish-add:hover {
+  transform:
+    scale(1.08);
+
+  background:
+    var(--garden-red-dark);
+
+  color:
+    white;
+}
+
+.menu-dish-add:disabled {
+  opacity: 0.5;
+
+  cursor:
+    not-allowed;
+}
+
+/* =========================================================
+   DISH CONTENT
+   ========================================================= */
+
+.menu-dish-content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  padding:
+    21px 21px 20px;
+}
+
+.menu-dish-content h3 {
+  margin: 0;
+
+  color:
+    var(--garden-black);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.22rem;
+
+  font-weight: 600;
+
+  line-height: 1.25;
+}
+
+.menu-dish-content p {
+  min-height: 42px;
+
+  margin:
+    11px 0 20px;
+
+  color:
+    var(--garden-muted);
+
+  font-size: 0.78rem;
+
+  line-height: 1.6;
+}
+
+.menu-dish-footer {
+  margin-top: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+.menu-dish-footer strong {
+  color:
+    var(--garden-red);
+
+  font-size: 1.05rem;
+
+  font-weight: 800;
+}
+
+.menu-dish-footer a {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color:
+    var(--garden-black);
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+}
+
+.menu-dish-footer a:hover {
+  color:
+    var(--garden-green);
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.menu-empty {
+  padding: 70px 25px;
+
+  border:
+    1px dashed var(--garden-border);
+
+  border-radius:
+    var(--garden-radius);
+
+  background:
+    rgba(255, 255, 255, 0.45);
+
+  text-align: center;
+}
+
+.menu-empty span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-size: 2rem;
+}
+
+.menu-empty h3 {
+  margin:
+    0 0 8px;
+
+  color:
+    var(--garden-black);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.5rem;
+}
+
+.menu-empty p {
+  max-width: 400px;
+
+  margin:
+    0 auto;
+
+  color:
+    var(--garden-muted);
+
+  font-size: 0.82rem;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   WHATSAPP SECTION
+   ========================================================= */
+
+.menu-whatsapp-section {
+  position: relative;
+
+  overflow: hidden;
+
+  margin-top: 70px;
+
+  padding:
+    65px 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  background:
+    linear-gradient(
+      120deg,
+      var(--garden-black),
+      #111b15
+    );
+
+  color:
+    white;
+}
+
+.menu-whatsapp-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  left: -120px;
+  bottom: -150px;
+
+  border:
+    1px solid rgba(79, 138, 91, 0.30);
+
+  border-radius: 50%;
+}
+
+.menu-whatsapp-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: -120px;
+  top: -170px;
+
+  border:
+    1px solid rgba(181, 47, 37, 0.35);
+
+  border-radius: 50%;
+}
+
+.menu-whatsapp-section > div {
+  position: relative;
+  z-index: 2;
+}
+
+.menu-whatsapp-section > div > span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color:
+    var(--garden-green-light);
+
+  font-size: 0.68rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.2em;
+}
+
+.menu-whatsapp-section h2 {
+  margin:
+    0 0 10px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(1.8rem, 4vw, 3rem);
+
+  font-weight: 400;
+}
+
+.menu-whatsapp-section p {
+  max-width: 520px;
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.7);
+
+  font-size: 0.85rem;
+
+  line-height: 1.65;
+}
+
+.menu-whatsapp-cta {
+  position: relative;
+  z-index: 2;
+
+  flex-shrink: 0;
+
+  padding:
+    14px 20px;
+
+  display: inline-flex;
+  align-items: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.20);
+
+  border-radius: 999px;
+
+  background:
+    var(--garden-red);
+
+  color:
+    white;
+
+  font-size: 0.78rem;
+
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.menu-whatsapp-cta:hover {
+  background:
+    var(--garden-red-dark);
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(181, 47, 37, 0.25);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.menu-footer {
+  padding:
+    30px 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  background:
+    var(--garden-dark);
+
+  color:
+    white;
+
+  border-top:
+    1px solid rgba(79, 138, 91, 0.18);
+}
+
+.menu-footer > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.menu-footer strong {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 0.95rem;
+
+  letter-spacing: 0.05em;
+}
+
+.menu-footer span {
+  color:
+    rgba(255, 255, 255, 0.55);
+
+  font-size: 0.68rem;
+}
+
+.menu-footer > a {
+  color:
+    var(--garden-red-light);
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .menu-header {
+    padding:
+      10px 4%;
+  }
+
+  .menu-header::after {
+    left: 4%;
+  }
+
+  .menu-content {
+    width: 92%;
+  }
+
+  .menu-category-list {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .menu-dishes-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .menu-whatsapp-section {
+    padding:
+      55px 6%;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .menu-header {
+    min-height: 70px;
+
+    padding:
+      8px 16px;
+
+    gap: 10px;
+  }
+
+  .menu-header::after {
+    left: 16px;
+
+    width: 60px;
+  }
+
+  .menu-brand {
+    gap: 9px;
+  }
+
+  .menu-brand img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .menu-brand-text strong {
+    font-size: 0.94rem;
+
+    letter-spacing: 0.055em;
+  }
+
+  .menu-brand-text span {
+    font-size: 0.52rem;
+
+    letter-spacing: 0.16em;
+  }
+
+  .menu-brand-text span::before {
+    width: 12px;
+
+    margin-right: 5px;
+  }
+
+  .menu-header-actions {
+    gap: 6px;
+  }
+
+  .menu-cart-link {
+    width: 42px;
+    height: 42px;
+
+    font-size: 0.95rem;
+  }
+
+  .menu-whatsapp-button {
+    min-height: 42px;
+
+    padding:
+      0 12px;
+
+    font-size: 0.68rem;
+  }
+
+  /* =======================================================
+     CART NOTICE
+     ======================================================= */
+
+  .menu-cart-notice {
+    right: 12px;
+    top: 80px;
+
+    width:
+      calc(100vw - 24px);
+
+    padding:
+      13px;
+  }
+
+  /* =======================================================
+     HERO
+     ======================================================= */
+
+  .menu-intro {
+    min-height: 330px;
+
+    padding:
+      50px 6% 70px;
+  }
+
+  .menu-intro-label {
+    margin-bottom: 14px;
+
+    font-size: 0.61rem;
+
+    letter-spacing: 0.18em;
+  }
+
+  .menu-intro-label::before {
+    width: 22px;
+  }
+
+  .menu-intro h1 {
+    font-size:
+      clamp(2.7rem, 15vw, 4.2rem);
+  }
+
+  .menu-intro p {
+    max-width: 310px;
+
+    margin-top: 18px;
+
+    font-size: 0.82rem;
+
+    line-height: 1.6;
+  }
+
+  .menu-intro-badge {
+    width: 105px;
+    height: 105px;
+
+    right: 18px;
+    bottom: 17px;
+
+    padding: 12px;
+
+    font-size: 0.57rem;
+  }
+
+  /* =======================================================
+     CONTENT
+     ======================================================= */
+
+  .menu-content {
+    width: 92%;
+
+    padding:
+      42px 0 55px;
+  }
+
+  .menu-search-section {
+    margin-bottom: 46px;
+  }
+
+  .menu-search-box input {
+    height: 52px;
+
+    padding-left: 47px;
+
+    border-radius: 12px;
+
+    font-size: 0.8rem;
+  }
+
+  .menu-search-box > span {
+    left: 17px;
+
+    font-size: 1.2rem;
+  }
+
+  /* =======================================================
+     CATEGORIES
+     ======================================================= */
+
+  .menu-categories {
+    margin-bottom: 55px;
+  }
+
+  .menu-section-heading {
+    margin-bottom: 20px;
+  }
+
+  .menu-section-heading h2,
+  .menu-results-heading h2 {
+    font-size: 1.65rem;
+  }
+
+  .menu-section-heading p {
+    margin-top: 7px;
+
+    font-size: 0.73rem;
+  }
+
+  .menu-category-list {
+    display: flex;
+
+    overflow-x: auto;
+
+    gap: 9px;
+
+    padding-bottom: 7px;
+
+    scroll-snap-type: x proximity;
+
+    scrollbar-width: none;
+  }
+
+  .menu-category-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu-category-button {
+    min-width: 190px;
+
+    min-height: 82px;
+
+    padding: 13px;
+
+    border-radius: 13px;
+
+    scroll-snap-align: start;
+  }
+
+  .menu-category-icon {
+    width: 39px;
+    height: 39px;
+
+    border-radius: 10px;
+
+    font-size: 1.1rem;
+  }
+
+  /* =======================================================
+     RESULTS
+     ======================================================= */
+
+  .menu-results-heading {
+    margin-bottom: 20px;
+  }
+
+  .menu-results-heading > div > span {
+    font-size: 0.61rem;
+  }
+
+  .menu-results-heading small {
+    font-size: 0.68rem;
+  }
+
+  /* =======================================================
+     DISHES
+     ======================================================= */
+
+  .menu-dishes-grid {
+    grid-template-columns: 1fr;
+
+    gap: 17px;
+  }
+
+  .menu-dish-image {
+    height: 235px;
+  }
+
+  .menu-dish-content {
+    padding:
+      17px 17px 18px;
+  }
+
+  .menu-dish-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .menu-dish-content p {
+    min-height: auto;
+
+    margin-top: 9px;
+
+    margin-bottom: 17px;
+
+    font-size: 0.75rem;
+  }
+
+  .menu-dish-footer strong {
+    font-size: 0.98rem;
+  }
+
+  /* =======================================================
+     WHATSAPP
+     ======================================================= */
+
+  .menu-whatsapp-section {
+    margin-top: 50px;
+
+    padding:
+      48px 7%;
+
+    display: block;
+  }
+
+  .menu-whatsapp-section h2 {
+    font-size: 2rem;
+  }
+
+  .menu-whatsapp-section p {
+    font-size: 0.76rem;
+  }
+
+  .menu-whatsapp-cta {
+    margin-top: 25px;
+
+    padding:
+      12px 16px;
+
+    font-size: 0.7rem;
+  }
+
+  /* =======================================================
+     FOOTER
+     ======================================================= */
+
+  .menu-footer {
+    padding:
+      25px 7%;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 16px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 390px) {
+  .menu-brand-text strong {
+    font-size: 0.86rem;
+  }
+
+  .menu-brand-text span {
+    display: none;
+  }
+
+  .menu-whatsapp-button {
+    padding:
+      0 10px;
+
+    font-size: 0.64rem;
+  }
+
+  .menu-intro {
+    min-height: 310px;
+  }
+
+  .menu-intro-badge {
+    width: 90px;
+    height: 90px;
+  }
+
+  .menu-category-button {
+    min-width: 175px;
+  }
+}
